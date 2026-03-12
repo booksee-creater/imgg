@@ -1,0 +1,204 @@
+body{
+background:#111;
+font-family:sans-serif;
+text-align:center;
+color:white;
+}
+
+.app{
+margin-top:40px;
+}
+
+.box{
+width:320px;
+margin:auto;
+position:relative;
+cursor:pointer;
+transition:transform .3s ease, filter .3s ease;
+}
+
+/* hover glow */
+
+.box:hover{
+transform:scale(1.05);
+filter:drop-shadow(0 0 20px #ff8ecf);
+}
+
+#boxImage{
+width:100%;
+display:block;
+}
+
+/* hint text */
+
+.hint{
+position:absolute;
+bottom:-30px;
+left:50%;
+transform:translateX(-50%);
+font-size:14px;
+color:#ffd7e6;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:.3}
+50%{opacity:1}
+100%{opacity:.3}
+}
+
+/* reward item */
+
+#reward{
+position:absolute;
+left:50%;
+bottom:140px;
+transform:translateX(-50%) translateY(60px) scale(.5);
+opacity:0;
+width:120px;
+}
+
+.showItem{
+animation:rise .7s ease forwards;
+}
+
+@keyframes rise{
+
+0%{
+transform:translateX(-50%) translateY(60px) scale(.5);
+opacity:0;
+}
+
+70%{
+transform:translateX(-50%) translateY(-60px) scale(1.1);
+opacity:1;
+}
+
+100%{
+transform:translateX(-50%) translateY(-40px) scale(1);
+}
+
+}
+
+/* shake */
+
+.shake{
+animation:shake .4s infinite;
+}
+
+@keyframes shake{
+0%{transform:rotate(0)}
+25%{transform:rotate(2deg)}
+50%{transform:rotate(-2deg)}
+75%{transform:rotate(2deg)}
+100%{transform:rotate(0)}
+}
+
+/* sparkles */
+
+#sparkles{
+position:absolute;
+left:50%;
+bottom:150px;
+transform:translateX(-50%);
+pointer-events:none;
+}
+
+.sparkle{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+animation:sparkle 1s ease-out forwards;
+}
+
+@keyframes sparkle{
+
+0%{
+opacity:1;
+transform:scale(0);
+}
+
+100%{
+opacity:0;
+transform:translateY(-60px) scale(1.5);
+}
+
+}
+
+/* confetti canvas */
+
+canvas{
+position:absolute;
+top:-150px;
+left:-150px;
+pointer-events:none;
+}
+body{
+background: linear-gradient(180deg,#ffe6f2,#fff6fb);
+font-family: "Poppins", sans-serif;
+}
+.sparkle-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background-image: radial-gradient(white 2px, transparent 2px);
+background-size:60px 60px;
+opacity:.2;
+}
+
+body{
+margin:0;
+font-family:"Poppins",sans-serif;
+
+/* pastel gradient background */
+
+background: linear-gradient(
+180deg,
+#ffe6f2,
+#fff3fb,
+#e8f7ff,
+#f3e8ff
+);
+
+height:100vh;
+overflow:hidden;
+}
+
+/* floating sparkles */
+
+.sparkle-background{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+
+background-image:
+radial-gradient(white 2px, transparent 2px),
+radial-gradient(#ffd6ec 2px, transparent 2px),
+radial-gradient(#cfefff 2px, transparent 2px);
+
+background-size:80px 80px,120px 120px,100px 100px;
+
+animation:sparkleMove 20s linear infinite;
+
+opacity:.6;
+}
+
+@keyframes sparkleMove{
+
+0%{
+background-position:0 0, 40px 60px, 20px 30px;
+}
+
+100%{
+background-position:200px 300px, -200px 200px, 150px -150px;
+}
+
+}
